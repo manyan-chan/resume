@@ -1,0 +1,55 @@
+# .github/workflows/compile-resume.yml
+
+name: Compile Resume PDF
+
+# Trigger the workflow on push events to the main branch
+on:
+  push:
+    branches: ["main"] # Change to "master" or your default branch if different
+    # Optional: Only run if .tex files were changed
+    # paths:
+    #   - '**.tex'
+  # Optional: Run on pull requests targeting the main branch
+  # pull_request:
+  #   branches: [ "main" ]
+  #   paths:
+  #     - '**.tex'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+    steps:
+      # Step 1: Check out your repository code
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # Step 2: Compile LaTeX using the xu-cheng/latex-action
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          # --- Required ---
+          # >>> CHANGE THIS if your main LaTeX file is named differently <<<
+          root_file: resume.tex
+
+          # --- Optional ---
+          # Specify the compiler (pdflatex is appropriate for your document)
+          compiler: pdflatex
+
+          # Arguments for latexmk: non-stop on errors, better error format, target PDF
+          args: -interaction=nonstopmode -file-line-error -pdf
+
+          # --- Advanced Optional ---
+          # You likely won't need extra packages for this resume template
+          # extra_system_packages: "texlive-fonts-extra"
+
+      # Step 3: Upload the generated PDF as an artifact
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # Name of the artifact bundle in GitHub Actions
+          name: Resume_PDF
+          # Path to the generated PDF file.
+          # >>> CHANGE THIS if your root_file is not resume.tex <<<
+          path: resume.pdf
+          # Optional: How long to keep the artifact (days). Default is 90.
+          # retention-days: 30

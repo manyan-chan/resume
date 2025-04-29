@@ -1,0 +1,15 @@
+# LaTeX generated files
+*.aux
+*.bbl
+*.blg
+*.idx
+*.ind
+*.ilg
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
