@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Simple Professional Resume
 % LaTeX Template
-% Version 1.3 (May 2024) - Added WQU Education
+% Version 1.4 (May 2024) - Improved Formatting without titlesec
 %
 % Based on the text provided by the user.
 % Uses standard article class with formatting packages.
@@ -20,7 +20,7 @@
 
 \usepackage[left=0.75in, right=0.75in, top=0.6in, bottom=0.6in]{geometry} % Margins
 \usepackage{enumitem} % For customizing lists (like itemize)
-% \usepackage{titlesec} % For customizing section titles - COMMENTED FOR DEBUGGING
+% \usepackage{titlesec} % User requested NOT to use this package
 \usepackage{needspace} % To prevent awkward page breaks mid-section
 \usepackage{url} % Nicer URL formatting
 \usepackage{hyperref} % For clickable links - Load relatively late
@@ -39,16 +39,14 @@
     pdfauthor={Man Yan Chan}        % Optional: Add PDF metadata
 }
 
-% --- Commented out titlesec customizations for debugging ---
-% % Customize section formatting
-% \titlespacing{\section*}{0pt}{1.5ex plus 1ex minus .2ex}{1.0ex plus .2ex} % Adjust spacing around sections
-% \titleformat{\section*}{\large\bfseries}{}{0em}{}[\titlerule] % Section title format: large, bold, with a rule underneath
-
 % Customize list environments (itemize) for tighter spacing
-\setlist[itemize]{leftmargin=*, nosep, topsep=0.5ex, itemsep=0.3ex} % Remove vertical spacing in itemize, default label, add minimal spacing
+% Adjust 'topsep' slightly for a tiny bit more space before the list
+\setlist[itemize]{leftmargin=*, nosep, topsep=0.5ex, itemsep=0.3ex}
 
-% Command for horizontal line separators if needed
-% \newcommand{\hrulefillbreak}{\par\noindent\hrulefill\par}
+% --- Manual Section Formatting ---
+% We'll manually add space and a rule before each \section*
+% Adjust \vspace values as needed for desired spacing
+\newcommand{\sectionbreak}{\vspace{2.5ex}\hrule\vspace{1.5ex}}
 
 %----------------------------------------------------------------------------------------
 
@@ -59,23 +57,25 @@
 %----------------------------------------------------------------------------------------
 
 \begin{center}
-    {\Huge\bfseries Man Yan CHAN} \\ \vspace{2mm} % Name
+    {\Huge\bfseries Man Yan CHAN} \\ \vspace{1.5mm} % Slightly more space after name
     Eastern District, Hong Kong \quad|\quad +852 56924792 \quad|\quad \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com} % Contact Info
 \end{center}
-\vspace{-2mm} % Reduce space after header slightly
+\vspace{-3mm} % Adjust space after header slightly more
 
 %----------------------------------------------------------------------------------------
 %	SUMMARY SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Summary} % Will use default formatting now
+\sectionbreak % Add rule and spacing before section
+\section*{Summary}
 Results-driven software engineer with 3+ years of experience in optimizing business processes and developing scalable software solutions in the financial sector. Proven track record of delivering high-quality code that enhances operational performance. Strong understanding of financial markets and diverse asset classes, with a focus on driving innovation and collaboration in fast-paced environments.
 
 %----------------------------------------------------------------------------------------
 %	WEBSITES SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Websites} % Will use default formatting now
+\sectionbreak % Add rule and spacing before section
+\section*{Websites}
 \begin{itemize}
     \item \textbf{Github:} \href{https://github.com/manyan-chan}{https://github.com/manyan-chan}
     \item \textbf{Linkedin:} \href{https://www.linkedin.com/in/richard-chanmy}{https://www.linkedin.com/in/richard-chanmy}
@@ -86,16 +86,18 @@ Results-driven software engineer with 3+ years of experience in optimizing busin
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Education} % Will use default formatting now
+\sectionbreak % Add rule and spacing before section
+\section*{Education}
 
 \Needspace{8\baselineskip} % Prevent page break if section starts near bottom
+\noindent % Required as this follows \sectionbreak which includes \vspace
 \textbf{WorldQuant University} \hfill \textit{04/2025 - 04/2027 (Expected)} \\
 \textit{Master of Science in Financial Engineering}
 \begin{itemize}
     \item Currently pursuing an MSc with a focus on quantitative modeling, data science, machine learning, financial theory, and applied statistics.
     \item Gaining practical skills in financial analytics, algorithmic trading, risk management, and portfolio optimization through hands-on projects and industry-focused coursework.
 \end{itemize}
-\vspace{1mm} % Add small space between entries
+\vspace{1.5ex} % Add consistent vertical space between entries
 
 \Needspace{8\baselineskip} % Prevent page break if section starts near bottom
 \noindent % Need \noindent here if following a \vspace
@@ -111,9 +113,11 @@ Results-driven software engineer with 3+ years of experience in optimizing busin
 %	EXPERIENCE SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Experience} % Will use default formatting now
+\sectionbreak % Add rule and spacing before section
+\section*{Experience}
 
 \Needspace{7\baselineskip}
+\noindent % Required as this follows \sectionbreak which includes \vspace
 \textbf{Barclays - Equities Derivatives FO IT} \\
 \textit{Software Engineer} \hfill \textit{06/2024 - Present}
 \begin{itemize}
@@ -121,18 +125,18 @@ Results-driven software engineer with 3+ years of experience in optimizing busin
     \item Developed and maintained FIX protocol interfaces in Python for electronic trading, facilitating seamless communication between Barclays and buy-side institutes.
     \item Implemented automated systems for quote pricing and order execution, streamlining the sales process and improving competitiveness amongst sell-side firms.
 \end{itemize}
-\vspace{1mm} % Add small space between entries
+\vspace{1.5ex} % Add consistent vertical space between entries
 
 \Needspace{7\baselineskip}
 \noindent % Need \noindent here if following a \vspace
-\textbf{HSBC - Market Treasury IT, Global Banking \& Markets} \\ % Use \& for ampersand
+\textbf{HSBC - Market Treasury IT, Global Banking \& Markets} \\ % Use & for ampersand
 \textit{Development Specialist} \hfill \textit{07/2022 - 02/2024}
 \begin{itemize}
     \item Created optimized ETL workflows using Python Pandas and NumPy, reducing data processing time, enabling front-office users to monitor Banking Book NPV of NII more effectively.
     \item Developed comprehensive test strategies and plans for SIT and UAT, ensuring high test coverage and application uptime.
     \item Leveraged Python Dash and Matplotlib to create graphical and interactive web applications, optimizing performance for seamless user experiences.
 \end{itemize}
-\vspace{1mm} % Add small space between entries
+\vspace{1.5ex} % Add consistent vertical space between entries
 
 \Needspace{8\baselineskip}
 \noindent % Need \noindent here if following a \vspace
@@ -149,8 +153,9 @@ Results-driven software engineer with 3+ years of experience in optimizing busin
 %	SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Skills} % Will use default formatting now
-% Using itemize for structure
+\sectionbreak % Add rule and spacing before section
+\section*{Skills}
+% Using itemize for structure - ensure \noindent is NOT needed before \begin{itemize}
 \begin{itemize}
     \item \textbf{Programming Languages:} Python
     \item \textbf{Web Development:} FastAPI, Dash
@@ -163,7 +168,8 @@ Results-driven software engineer with 3+ years of experience in optimizing busin
 %	CERTIFICATES SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Certificates} % Will use default formatting now
+\sectionbreak % Add rule and spacing before section
+\section*{Certificates}
 \begin{itemize}
     \item CFA Institute Investment Foundations\textregistered{} Certificate
     \item Bloomberg Market Concepts
@@ -180,8 +186,13 @@ Results-driven software engineer with 3+ years of experience in optimizing busin
 %	LANGUAGES SECTION
 %----------------------------------------------------------------------------------------
 
-\section*{Languages} % Will use default formatting now
+\sectionbreak % Add rule and spacing before section
+\section*{Languages}
+% \noindent % Not needed here as it's just text
 English, Cantonese, Putonghua
+
+% Add a little space at the very end if needed, but usually not necessary
+% \vspace{1ex}
 
 %----------------------------------------------------------------------------------------
 
