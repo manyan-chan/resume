@@ -2,18 +2,13 @@
 
 name: Compile Resume PDF
 
-# Trigger the workflow on push events to the main branch
+# Trigger the workflow on push events to all branches
 on:
   push:
-    branches: ["main"] # Change to "master" or your default branch if different
+    branches: ["*"] # Run on every branch push
     # Optional: Only run if .tex files were changed
     # paths:
     #   - '**.tex'
-  # Optional: Run on pull requests targeting the main branch
-  # pull_request:
-  #   branches: [ "main" ]
-  #   paths:
-  #     - '**.tex'
 
 jobs:
   build_latex:
@@ -29,6 +24,7 @@ jobs:
         with:
           # --- Required ---
           # >>> CHANGE THIS if your main LaTeX file is named differently <<<
+          # If your file name matches the branch name dynamically, you may need a different setup.
           root_file: resume.tex
 
           # --- Optional ---
