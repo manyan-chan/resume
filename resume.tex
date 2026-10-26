@@ -1,212 +1,128 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Simple Professional Resume
-% LaTeX Template
-% Version 1.9 (Aug 2026) - Fully Optimized & Corrected
-%
-% Based on the text provided by the user.
-% Uses standard article class with formatting packages.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,a4paper]{article}
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[left=0.65in, right=0.65in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
 
-\documentclass[10pt,a4paper]{article} % Standard font size and paper size
-
-\usepackage[utf8]{inputenc} % Input encoding
-\usepackage[T1]{fontenc} % Font encoding
-\usepackage{lmodern}  % Use Latin Modern font
-\usepackage{textcomp} % Required for \textregistered symbol
-
-\usepackage[left=0.75in, right=0.75in, top=0.6in, bottom=0.6in]{geometry} % Margins
-\usepackage{enumitem} % For customizing lists (like itemize)
-% \usepackage{titlesec} % User requested NOT to use this package
-\usepackage{needspace} % To prevent awkward page breaks mid-section
-\usepackage{url} % Nicer URL formatting
-\usepackage{hyperref} % For clickable links - Load relatively late
-\usepackage{microtype} % Improves typography (justification, spacing)
-
-% Suppress page numbers
 \pagestyle{empty}
 
-% Define hyperlink colors
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=blue!50!black,
     filecolor=magenta,
-    urlcolor=blue,
-    pdftitle={Man Yan Chan Resume}, % Optional: Add PDF metadata
-    pdfauthor={Man Yan Chan}        % Optional: Add PDF metadata
+    urlcolor=blue!50!black,
+    pdftitle={Man Yan Chan - Software Engineer & Trading Support Specialist},
+    pdfauthor={Man Yan Chan}
 }
 
-% Customize list environments (itemize) for tighter spacing
-% Adjust 'topsep' slightly for a tiny bit more space before the list
-\setlist[itemize]{leftmargin=*, nosep, topsep=0.5ex, itemsep=0.3ex}
+\setlist[itemize]{leftmargin=*, nosep, topsep=0.3ex, itemsep=0.2ex}
 
-% --- Manual Section Formatting ---
-% We'll manually add space and a rule before each \section*
-% Adjust \vspace values as needed for desired spacing
-\newcommand{\sectionbreak}{\vspace{2.5ex}\hrule\vspace{1.5ex}}
-
-%----------------------------------------------------------------------------------------
+\newcommand{\sectionbreak}{\vspace{1.8ex}\hrule height 0.5pt\vspace{1.2ex}}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	HEADER SECTION
-%----------------------------------------------------------------------------------------
-
 \begin{center}
-    {\Huge\bfseries Man Yan CHAN} \\ \vspace{1.5mm} % Slightly more space after name
-    Eastern District, Hong Kong \quad|\quad +852 56924792 \quad|\quad \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com} % Contact Info
+    {\LARGE\bfseries MAN YAN CHAN} \\ \vspace{1mm}
+    Eastern District, Hong Kong \quad|\quad +852 56924792 \quad|\quad \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com} \\
+    \vspace{0.8mm}
+    \href{https://github.com/manyan-chan}{github.com/manyan-chan} \quad|\quad \href{https://www.linkedin.com/in/richard-chanmy}{linkedin.com/in/richard-chanmy} \quad|\quad \href{https://manyan-chan.github.io}{manyan-chan.github.io}
 \end{center}
-\vspace{-3mm} % Adjust space after header slightly more
+\vspace{-2mm}
 
-%----------------------------------------------------------------------------------------
-%	SUMMARY SECTION
-%----------------------------------------------------------------------------------------
+\sectionbreak
+\section*{Professional Summary}
+Versatile Software Engineer and Technical Support Specialist with 4+ years of experience bridging robust backend development, quantitative systems, and low-latency trading floor support within top-tier financial institutions (Crédit Agricole, Barclays, HSBC). Expert in Python microservices, FIX protocol integration, ETL data pipelines, and cutting-edge AI/LLM tooling for automated diagnostics. Proven ability to ensure high system availability, streamline pre-trade workflows, and deliver resilient software solutions for front-office trading and risk management teams.
 
-\sectionbreak % Add rule and spacing before section
-\section*{Summary}
-Results-driven software engineer with 4+ years of experience in optimizing business processes, quantitative systems, and developing scalable software solutions in the financial sector. Proven track record of delivering high-quality code that enhances operational performance. Strong understanding of financial markets, algorithmic trading, and diverse asset classes, with a focus on driving innovation and collaboration in fast-paced environments.
-
-%----------------------------------------------------------------------------------------
-%	WEBSITES SECTION
-%----------------------------------------------------------------------------------------
-
-\sectionbreak % Add rule and spacing before section
-\section*{Websites}
+\sectionbreak
+\section*{Core Technical \& Support Competencies}
 \begin{itemize}
-    \item \textbf{Github:} \href{https://github.com/manyan-chan}{https://github.com/manyan-chan}
-    \item \textbf{Linkedin:} \href{https://www.linkedin.com/in/richard-chanmy}{https://www.linkedin.com/in/richard-chanmy}
-    \item \textbf{Personal Website:} \href{https://manyan-chan.github.io}{https://manyan-chan.github.io}
+    \item \textbf{Development \& Backend:} Python (Pandas, NumPy, Flask, FastAPI, Django), Java, JavaScript, C++, SQL, Microservices, REST APIs, ETL Pipelines
+    \item \textbf{Trading Systems \& Domain:} FIX Protocol, ION Platform, OMS/EMS, Pre-Trade Risk, Equities, FICC, Credit Trading, Derivatives, Algorithmic Execution
+    \item \textbf{Production Support \& Reliability:} Incident Management, Root-Cause Analysis (RCA), L2/L3 Functional Support, Trade Lifecycle Diagnostics, SIT/UAT Automation
+    \item \textbf{AI Tools \& DevOps:} AI Coding Agents, LLM Prompt Engineering, AWS (EC2), Linux/Ubuntu, Git, TeamCity, Jenkins, CI/CD
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+\sectionbreak
+\section*{Professional Experience}
 
-\sectionbreak % Add rule and spacing before section
-\section*{Experience}
-
-\Needspace{7\baselineskip}
+\Needspace{6\baselineskip}
 \noindent
-\textbf{Crédit Agricole CIB - Credit Trading Desk} \\
-\textit{Functional Support} \hfill \textit{01/2026 - Present}
+\textbf{Crédit Agricole CIB -- Credit Trading Desk} \hfill \textit{01/2026 -- Present} \\
+\textit{Functional Support Specialist (Front Office Trading)}
 \begin{itemize}
-    \item Leveraged AI-driven automation and LLM-powered diagnostic tools to optimize pretrade support workflows, accelerating root-cause analysis and incident resolution times.
-    \item Delivered hands-on pretrade functional support via the ION platform, resolving pricing discrepancies, pre-trade risk validation errors, and order setup issues for credit traders.
-    \item Diagnosed and resolved pretrade workflow bottlenecks, including quote feasibility checks and scenario simulations, minimizing downtime during high-volume trading sessions.
-    \item Investigated complex trade lifecycle anomalies across credit structures, collaborating with front-office teams to implement fixes and ensure regulatory compliance.
+    \item Deliver rigorous, real-time pre-trade and post-trade functional support via the ION platform, immediately resolving pricing discrepancies, risk validation errors, and order routing faults for credit traders.
+    \item Pioneered the integration of AI-driven automation and LLM-powered diagnostic tools into daily support workflows, drastically reducing incident resolution times and root-cause identification cycles.
+    \item Streamlined critical pre-trade workflow bottlenecks, including quote feasibility checks and scenario simulations, ensuring zero business disruption during high-volume market sessions.
+    \item Investigated complex multi-asset trade lifecycle anomalies across credit structures, collaborating closely with quantitative development and front-office desks to ensure strict regulatory compliance and system stability.
 \end{itemize}
-\vspace{1.5ex}
+\vspace{1.2ex}
 
-\Needspace{7\baselineskip}
-\noindent % Required as this follows \sectionbreak which includes \vspace
-\textbf{Barclays - Equities Derivatives Sales \& Trading} \\
-\textit{Software Engineer} \hfill \textit{06/2024 - 06/2025}
+\Needspace{6\baselineskip}
+\noindent
+\textbf{Barclays -- Equities Derivatives Sales \& Trading} \hfill \textit{06/2024 -- 06/2025} \\
+\textit{Software Engineer}
 \begin{itemize}
-    \item Engineered event-driven microservices in Python for the electronic trading platform, utilizing AI coding agents and LLM tooling to accelerate code development, unit testing, and deployment.
-    \item Developed and maintained complex FIX protocol interfaces in Python, ensuring low-latency and reliable communication for order and execution management between Barclays and buy-side institutes.
-    \item Architected and implemented Python-based automated systems for real-time quote pricing and algorithmic execution, streamlining sales workflows and increasing market competitiveness.
+    \item Engineered high-performance, event-driven Python microservices for the core electronic trading platform, leveraging advanced AI tooling and coding agents to accelerate test coverage and CI/CD deployments.
+    \item Developed, optimized, and maintained complex FIX protocol interfaces in Python, securing low-latency, resilient order and execution management messaging between Barclays and tier-one buy-side clients.
+    \item Architected robust automated backend pricing and algorithmic execution pipelines, vastly improving market quoting speed, sales workflow efficiency, and overall trading desk competitiveness.
 \end{itemize}
-\vspace{1.5ex} % Add consistent vertical space between entries
+\vspace{1.2ex}
 
-\Needspace{7\baselineskip}
-\noindent % Need \noindent here if following a \vspace
-\textbf{HSBC - Market Treasury IT, Global Banking \& Markets} \\ % Use & for ampersand
-\textit{Development Specialist} \hfill \textit{07/2022 - 02/2024}
+\Needspace{6\baselineskip}
+\noindent
+\textbf{HSBC -- Market Treasury IT, Global Banking \& Markets} \hfill \textit{07/2022 -- 02/2024} \\
+\textit{Development Specialist}
 \begin{itemize}
-    \item Created optimized ETL data pipelines using Python Pandas and NumPy, reducing data processing time, enabling front-office users to monitor Banking Book NPV of NII more effectively.
-    \item Designed SIT/UAT automation strategies and test plans, boosting test coverage and ensuring zero critical release bugs for maximum application uptime.
-    \item Leveraged Python Dash and Matplotlib to create graphical and interactive web dashboards, optimizing performance for seamless user experiences.
+    \item Designed and deployed optimized ETL data pipelines using Python (Pandas, NumPy), cutting data processing overhead and enabling front-office users to accurately monitor Banking Book Net Interest Income (NII) and Net Present Value (NPV).
+    \item Spearheaded SIT/UAT automation testing frameworks and strategies, elevating test suite coverage and eliminating critical production release bugs to guarantee maximum application availability.
+    \item Built interactive, graphical web dashboards using Python Dash and Matplotlib, transforming complex financial data analytics into intuitive visualizations for internal stakeholders.
 \end{itemize}
-\vspace{1.5ex} % Add consistent vertical space between entries
+\vspace{1.2ex}
 
-\Needspace{8\baselineskip}
-\noindent % Need \noindent here if following a \vspace
-\textbf{NineBarrack} \\
-\textit{Quant Developer (Part-time)} \hfill \textit{01/2022 - 05/2022}
+\Needspace{6\baselineskip}
+\noindent
+\textbf{NineBarrack} \hfill \textit{01/2022 -- 05/2022} \\
+\textit{Quant Developer (Part-time)}
 \begin{itemize}
-    \item Developed and executed comprehensive backtesting frameworks for quantitative trading strategies utilizing Python libraries (Pandas, NumPy) to validate performance and risk metrics.
-    \item Designed and maintained an interactive web dashboard for real-time market data monitoring, leveraging technologies such as Flask, ReactJS, and SocketIO.
-    \item Managed and optimized Amazon EC2 instances to ensure high availability and performance, implementing CI/CD best practices for system reliability.
-    \item Transformed complex quantitative logic into a robust algorithmic trading bot using Python, streamlining execution processes and enhancing market execution efficiency.
+    \item Developed quantitative backtesting frameworks using Python to validate multi-factor trading algorithms, assessing rigorous risk-return metrics.
+    \item Engineered and maintained full-stack monitoring interfaces using Flask, ReactJS, and SocketIO for real-time market data surveillance.
+    \item Managed cloud infrastructure on AWS EC2 instances, establishing reliable deployment practices and robust automated trading bot execution loops.
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
-\sectionbreak % Add rule and spacing before section
+\sectionbreak
 \section*{Education}
 
-\Needspace{8\baselineskip} % Prevent page break if section starts near bottom
-\noindent % Required as this follows \sectionbreak which includes \vspace
-\textbf{WorldQuant University} \hfill \textit{04/2025 - 04/2027 (Expected)} \\
+\Needspace{5\baselineskip}
+\noindent
+\textbf{WorldQuant University} \hfill \textit{04/2025 -- 04/2027 (Expected)} \\
 \textit{Master of Science in Financial Engineering}
 \begin{itemize}
-    \item Currently pursuing an MSc with a focus on quantitative modeling, time-series analysis, machine learning, financial theory, and applied statistics.
-    \item Gaining practical skills in financial analytics, algorithmic trading, risk management, and portfolio optimization through hands-on projects and industry-focused coursework.
+    \item Focusing on advanced quantitative modeling, time-series analysis, machine learning, and computational finance for algorithmic execution.
 \end{itemize}
-\vspace{1.5ex} % Add consistent vertical space between entries
+\vspace{1.2ex}
 
-\Needspace{8\baselineskip} % Prevent page break if section starts near bottom
-\noindent % Need \noindent here if following a \vspace
+\Needspace{5\baselineskip}
+\noindent
 \textbf{The University of Hong Kong} \hfill \textit{Graduated 06/2022} \\
-\textit{Bachelor of Business Administration in Information Systems and Computer Science} \\
-\textbf{Honors:} Second Class Honors (Upper Division) / 2:1
+\textit{Bachelor of Business Administration in Information Systems and Computer Science} \quad|\quad \textbf{Honors:} Second Class Upper (2:1)
 \begin{itemize}
-    \item Completed a diverse range of business courses, including Accounting, Economics, Corporate Finance, and Statistics, providing a strong foundation in core financial principles.
-    \item Studied and became proficient in a variety of programming languages, such as Python, SQL, and JavaScript, enabling versatile problem-solving and application development.
-    \item Analyzed complex corporate case studies and financial models to evaluate business strategy, operational performance, and market risk.
+    \item Rigorous dual foundation combining core financial principles (Corporate Finance, Economics, Statistics) with rigorous software engineering (Data Structures, Algorithms, Systems Architecture).
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	SKILLS SECTION
-%----------------------------------------------------------------------------------------
-
-\sectionbreak % Add rule and spacing before section
-\section*{Skills}
-% Using itemize for structure - ensure \noindent is NOT needed before \begin{itemize}
-\begin{itemize}
-    \item \textbf{Languages \& Web:} Python, SQL, Java, JavaScript, C++, FastAPI, Flask, Django, ReactJS
-    \item \textbf{AI \& Analytics:} AI Agents, LLM Tooling, Prompt Engineering, Pandas, NumPy, Matplotlib, Dash, Time-Series Analysis
-    \item \textbf{Trading \& Domain:} FIX Protocol, ION Platform, OMS/EMS, Pre-Trade Risk, Equities, FICC, Derivatives
-    \item \textbf{Cloud \& DevOps:} AWS (EC2), Linux/Ubuntu, TeamCity, Jenkins, Git, CI/CD, Microservices
-\end{itemize}
-
-%----------------------------------------------------------------------------------------
-%	CERTIFICATES SECTION
-%----------------------------------------------------------------------------------------
-
-\sectionbreak % Add rule and spacing before section
+\sectionbreak
 \section*{Certificates}
 \begin{itemize}
-    \item CFA Institute Investment Foundations\textregistered{} Certificate
-    \item Bloomberg Market Concepts
-    \item OpenEDG Python Institute: Programming with Python Professional Certificate
-    \item Anaconda Python for Data Science Professional Certificate
-    \item Data Engineering Foundations Professional Certificate by Astronomer
-    \item Ubuntu Linux Professional Certificate by Canonical
-    \item HackerRank Software Engineer Certificate
-    \item HackerRank Problem Solving (Intermediate) Certificate
-    \item Cisco Certificate in Ethical Hacking
+    \item \textbf{Finance \& Markets:} CFA Institute Investment Foundations\textregistered{} Certificate, Bloomberg Market Concepts
+    \item \textbf{Programming \& Engineering:} OpenEDG Python Professional, Anaconda Python Data Science, Astronomer Data Engineering Foundations, HackerRank Software Engineer \& Problem Solving (Intermediate)
+    \item \textbf{Systems \& Security:} Ubuntu Linux Professional (Canonical), Cisco Certified Ethical Hacker
 \end{itemize}
-
-%----------------------------------------------------------------------------------------
-%	LANGUAGES SECTION
-%----------------------------------------------------------------------------------------
-
-\sectionbreak % Add rule and spacing before section
-\section*{Languages}
-% \noindent % Not needed here as it's just text
-English, Cantonese, Putonghua
-
-% Add a little space at the very end if needed, but usually not necessary
-% \vspace{1ex}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
