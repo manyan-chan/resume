@@ -22,22 +22,12 @@ permissions:
 jobs:
   compile:
     name: Compile All PDFs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      # Cache downloaded Debian packages between workflow runs.
-      - name: Cache LaTeX packages
-        uses: actions/cache@v4
-        with:
-          path: /var/cache/apt/archives
-          key: ${{ runner.os }}-latex-packages-v1
-          restore-keys: |
-            ${{ runner.os }}-latex-packages-
-
-      # Install only the LaTeX packages required by the resumes.
       - name: Install LaTeX
         run: |
           sudo apt-get update
@@ -64,11 +54,8 @@ jobs:
               "$file"
 
             count=$((count + 1))
-          done < <(
-            find . -type f -name '*.tex' \
-              -not -path './.git/*' \
-              -print0
-          )
+          done < <(find . -type f -name '*.tex' \
+            -not -path './.git/*' -print0)
 
           if [ "$count" -eq 0 ]; then
             echo "No .tex files found."
@@ -78,7 +65,7 @@ jobs:
           echo "Successfully compiled $count LaTeX document(s)."
 
       - name: Upload compiled PDFs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: compiled-pdfs
           path: '**/*.pdf'
