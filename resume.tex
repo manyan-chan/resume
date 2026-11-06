@@ -1,8 +1,7 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Simple Professional Resume
-% LaTeX Template
-% Version 1.9 (Aug 2026) - Fully Optimized & Corrected for ATS & AI Scanners
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAN YAN CHAN
+% SOFTWARE ENGINEER / ELECTRONIC TRADING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,a4paper]{article}
 
@@ -10,179 +9,263 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{textcomp}
-
-\usepackage[left=0.75in, right=0.75in, top=0.6in, bottom=0.6in]{geometry}
+\usepackage[
+    a4paper,
+    left=0.65in,
+    right=0.65in,
+    top=0.55in,
+    bottom=0.55in
+]{geometry}
 \usepackage{enumitem}
 \usepackage{needspace}
-\usepackage{url}
 \usepackage{hyperref}
 \usepackage{microtype}
 
 \pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\urlstyle{same}
 
-% --- ATS & AI Scanner Optimized PDF Metadata ---
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
     urlcolor=blue,
-    pdftitle={Man Yan Chan - Software Engineer & Trading Support Resume},
+    pdftitle={Man Yan Chan - Software Engineer - Electronic Trading},
     pdfauthor={Man Yan Chan},
-    pdfsubject={Quantitative Systems, Software Engineering, and Trading Support},
-    pdfkeywords={Python, FIX Protocol, ION Platform, AWS, Quant Developer, Financial Engineering, OMS, EMS, Pre-Trade Risk}
+    pdfsubject={Software Engineering, Electronic Trading and Financial Technology},
+    pdfkeywords={Python, FIX 4.4, FIX Protocol, Electronic Trading,
+    Microservices, ION Platform, OMS, EMS, PostgreSQL, AWS}
 }
 
-\setlist[itemize]{leftmargin=*, nosep, topsep=0.5ex, itemsep=0.3ex}
+\setlist[itemize]{
+    leftmargin=1.2em,
+    nosep,
+    topsep=0.35ex,
+    itemsep=0.45ex,
+    parsep=0pt
+}
 
-\newcommand{\sectionbreak}{\vspace{2.5ex}\hrule\vspace{1.5ex}}
+\newcommand{\resumesection}[1]{%
+    \vspace{1.4ex}
+    {\large\bfseries #1}\par
+    \vspace{0.4ex}
+    \hrule
+    \vspace{0.7ex}
+}
+
+\newcommand{\experience}[3]{%
+    \Needspace{5\baselineskip}
+    \textbf{#1}\hfill\textit{#3}\\
+    \textit{#2}\par
+}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	HEADER SECTION
-%----------------------------------------------------------------------------------------
-
+% HEADER
 \begin{center}
-    {\Huge\bfseries Man Yan CHAN} \\ \vspace{1.5mm}
-    Eastern District, Hong Kong \quad|\quad +852 56924792 \quad|\quad \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com}
+    {\LARGE\bfseries Man Yan CHAN}\\[1mm]
+    {\normalsize Software Engineer | Electronic Trading \& Quantitative Systems}\\[1.5mm]
+    Eastern District, Hong Kong
+    \quad|\quad +852 56924792
+    \quad|\quad
+    \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com}\\[1mm]
+    \href{https://github.com/manyan-chan}{GitHub}
+    \quad|\quad
+    \href{https://www.linkedin.com/in/richard-chanmy}{LinkedIn}
+    \quad|\quad
+    \href{https://manyan-chan.github.io}{Personal Website}
 \end{center}
-\vspace{-3mm}
 
-%----------------------------------------------------------------------------------------
-%	SUMMARY SECTION
-%----------------------------------------------------------------------------------------
+\resumesection{Professional Summary}
 
-\sectionbreak
-\section*{Summary}
-Results-driven Software Engineer and Quantitative Systems Developer with 4+ years of experience optimizing front-office trading workflows, quantitative systems, and scalable financial infrastructure. Proven track record of leveraging AI-driven tooling, Python, and low-latency protocols (FIX, ION) to enhance operational performance and accelerate incident resolution. Strong domain expertise in FICC, equities derivatives, and algorithmic trading systems.
+Software Engineer specializing in electronic trading systems,
+front-office financial technology, and quantitative development,
+with 4+ years of experience across investment banking and
+financial technology environments. Experienced in developing
+Python-based trading applications, FIX 4.4 integrations,
+event-driven microservices, automated pricing workflows,
+and financial data pipelines. Strong understanding of FICC,
+equities derivatives, OMS/EMS infrastructure, and pre-trade
+risk workflows. Currently pursuing an MSc in Financial Engineering.
 
-%----------------------------------------------------------------------------------------
-%	WEBSITES SECTION
-%----------------------------------------------------------------------------------------
+\resumesection{Professional Experience}
 
-\sectionbreak
-\section*{Websites}
+\experience
+{Crédit Agricole CIB -- Credit Trading Desk}
+{Functional Support Engineer}
+{01/2026 -- Present}
+
 \begin{itemize}
-    \item \textbf{Github:} \href{https://github.com/manyan-chan}{https://github.com/manyan-chan}
-    \item \textbf{Linkedin:} \href{https://www.linkedin.com/in/richard-chanmy}{https://www.linkedin.com/in/richard-chanmy}
-    \item \textbf{Personal Website:} \href{https://manyan-chan.github.io}{https://manyan-chan.github.io}
+    \item Provide front-office functional and technical support
+    for credit trading workflows on the ION platform, resolving
+    pricing discrepancies, pre-trade risk validation errors,
+    and order configuration issues.
+
+    \item Perform SQL-based troubleshooting and database
+    investigations to diagnose trading workflow discrepancies
+    and resolve operational issues.
+
+    \item Execute business-as-usual (BAU) trading operations,
+    including IMM roll activities, supporting accurate
+    processing of credit trading workflows.
+
+    \item Investigate complex pricing and trade lifecycle
+    anomalies, including quote feasibility checks and
+    scenario simulations, collaborating with front-office
+    stakeholders to maintain reliable trading operations.
+
+    \item Leverage AI-assisted diagnostic tools and
+    LLM-powered automation to streamline incident
+    investigation and improve operational efficiency.
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+\vspace{0.8ex}
 
-\sectionbreak
-\section*{Experience}
+\experience
+{Barclays -- Equities Derivatives Sales \& Trading}
+{Software Engineer}
+{06/2024 -- 06/2025}
 
-\Needspace{7\baselineskip}
-\noindent
-\textbf{Crédit Agricole CIB - Credit Trading Desk} \\
-\textit{Functional Support Engineer} \hfill \textit{01/2026 - Present}
 \begin{itemize}
-    \item Leveraged AI-driven automation and LLM-powered diagnostic tools to optimize pretrade support workflows, accelerating root-cause analysis and incident resolution times.
-    \item Delivered hands-on pretrade functional support via the ION platform, resolving pricing discrepancies, pre-trade risk validation errors, and order setup issues for credit traders.
-    \item Diagnosed and resolved pretrade workflow bottlenecks, including quote feasibility checks and scenario simulations, minimizing downtime during high-volume trading sessions.
-    \item Investigated complex trade lifecycle anomalies across credit structures, collaborating with front-office teams to implement fixes and ensure regulatory compliance.
-\end{itemize}
-\vspace{1.5ex}
+    \item Engineered Python-based event-driven microservices
+    supporting electronic trading workflows, leveraging
+    AI coding agents and LLM-assisted tools to accelerate
+    development, testing, and debugging.
 
-\Needspace{7\baselineskip}
-\noindent
-\textbf{Barclays - Equities Derivatives Sales \& Trading} \\
-\textit{Software Engineer} \hfill \textit{06/2024 - 06/2025}
-\begin{itemize}
-    \item Engineered event-driven microservices in Python for the electronic trading platform, utilizing AI coding agents and LLM tooling to accelerate code development, unit testing, and deployment.
-    \item Developed and maintained complex FIX protocol interfaces in Python, ensuring low-latency and reliable communication for order and execution management between Barclays and buy-side institutes.
-    \item Architected and implemented Python-based automated systems for real-time quote pricing and algorithmic execution, streamlining sales workflows and increasing market competitiveness.
-\end{itemize}
-\vspace{1.5ex}
+    \item Developed and maintained FIX 4.4 protocol
+    integrations, including FIX session management,
+    Execution Reports, and Order Cancel/Replace workflows
+    for reliable order and execution communication
+    with buy-side institutions.
 
-\Needspace{7\baselineskip}
-\noindent
-\textbf{HSBC - Market Treasury IT, Global Banking \& Markets} \\
-\textit{Development Specialist} \hfill \textit{07/2022 - 02/2024}
-\begin{itemize}
-    \item Created optimized ETL data pipelines using Python Pandas and NumPy, reducing data processing time and enabling front-office users to monitor Banking Book NPV of NII more effectively.
-    \item Designed SIT/UAT automation strategies and test plans, boosting test coverage and ensuring zero critical release bugs for maximum application uptime.
-    \item Leveraged Python Dash and Matplotlib to create graphical and interactive web dashboards, optimizing performance for seamless user experiences.
-\end{itemize}
-\vspace{1.5ex}
+    \item Implemented automated pricing and algorithmic
+    execution systems in Python, streamlining equities
+    derivatives sales and trading workflows.
 
-\Needspace{8\baselineskip}
-\noindent
-\textbf{NineBarrack} \\
-\textit{Quant Developer (Part-time)} \hfill \textit{01/2022 - 05/2022}
-\begin{itemize}
-    \item Developed and executed comprehensive backtesting frameworks for quantitative trading strategies utilizing Python libraries (Pandas, NumPy) to validate performance and risk metrics.
-    \item Designed and maintained an interactive web dashboard for real-time market data monitoring, leveraging Flask, ReactJS, and SocketIO.
-    \item Managed and optimized Amazon EC2 instances to ensure high availability and performance, implementing CI/CD best practices for system reliability.
-    \item Transformed complex quantitative logic into a robust algorithmic trading bot using Python, streamlining execution processes and enhancing market execution efficiency.
+    \item Supported the development and maintenance
+    of front-office electronic trading applications,
+    focusing on reliable order lifecycle processing
+    and system integration.
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+\vspace{0.8ex}
 
-\sectionbreak
-\section*{Education}
+\experience
+{HSBC -- Market Treasury IT, Global Banking \& Markets}
+{Development Specialist}
+{07/2022 -- 02/2024}
 
-\Needspace{8\baselineskip}
-\noindent
-\textbf{WorldQuant University} \hfill \textit{04/2025 - 04/2027 (Expected)} \\
+\begin{itemize}
+    \item Developed Python-based ETL pipelines using
+    Pandas and NumPy to process financial datasets
+    supporting Banking Book Net Present Value (NPV)
+    and Net Interest Income (NII) analytics.
+
+    \item Utilized PostgreSQL for financial data retrieval,
+    querying, and integration with analytical applications.
+
+    \item Built interactive financial analytics dashboards
+    using Plotly Dash and Matplotlib, enabling front-office
+    users to monitor financial metrics and portfolio exposures.
+
+    \item Designed SIT/UAT automation strategies and
+    regression testing plans to improve test coverage
+    and application release reliability.
+\end{itemize}
+
+\vspace{0.8ex}
+
+\experience
+{NineBarrack}
+{Quant Developer (Part-time)}
+{01/2022 -- 05/2022}
+
+\begin{itemize}
+    \item Developed Python-based quantitative trading
+    backtesting frameworks using Pandas and NumPy
+    to evaluate systematic trading strategies.
+
+    \item Implemented and tested technical indicators
+    including Bollinger Bands, Moving Averages,
+    and Relative Strength Index (RSI) for trading strategies.
+
+    \item Built interactive market data monitoring
+    dashboards using Flask, ReactJS, and SocketIO.
+
+    \item Developed algorithmic trading automation tools
+    to translate quantitative strategy logic into
+    executable trading workflows.
+
+    \item Managed AWS EC2 infrastructure and implemented
+    CI/CD practices to support application availability
+    and deployment reliability.
+\end{itemize}
+
+\resumesection{Education}
+
+\Needspace{5\baselineskip}
+\textbf{WorldQuant University}
+\hfill \textit{04/2025 -- 04/2027 (Expected)}\\
 \textit{Master of Science in Financial Engineering}
-\begin{itemize}
-    \item Focus on quantitative modeling, time-series analysis, machine learning, financial theory, and applied statistics.
-    \item Gaining practical skills in financial analytics, algorithmic trading, risk management, and portfolio optimization through hands-on projects and industry-focused coursework.
-\end{itemize}
-\vspace{1.5ex}
 
-\Needspace{8\baselineskip}
-\noindent
-\textbf{The University of Hong Kong} \hfill \textit{Graduated 06/2022} \\
-\textit{Bachelor of Business Administration in Information Systems and Computer Science} \\
+\begin{itemize}
+    \item Focus areas include quantitative modeling,
+    time-series analysis, machine learning, financial theory,
+    applied statistics, and portfolio optimization.
+\end{itemize}
+
+\vspace{0.8ex}
+
+\Needspace{5\baselineskip}
+\textbf{The University of Hong Kong}
+\hfill \textit{Graduated 06/2022}\\
+\textit{Bachelor of Business Administration in Information
+Systems and Computer Science}\\
 \textbf{Honors:} Second Class Honors (Upper Division) / 2:1
+
 \begin{itemize}
-    \item Completed rigorous coursework covering core financial principles, Corporate Finance, Accounting, and Statistics.
-    \item Built strong software engineering foundations in Python, SQL, Java, C++, and JavaScript.
+    \item Developed foundations in software engineering,
+    programming, databases, statistics, accounting,
+    and corporate finance.
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	SKILLS SECTION
-%----------------------------------------------------------------------------------------
+\resumesection{Technical Skills}
 
-\sectionbreak
-\section*{Skills}
 \begin{itemize}
-    \item \textbf{Languages \& Web:} Python, SQL, Java, JavaScript, C++, FastAPI, Flask, Django, ReactJS
-    \item \textbf{AI \& Analytics:} AI Agents, LLM Tooling, Prompt Engineering, Pandas, NumPy, Matplotlib, Dash, Time-Series Analysis
-    \item \textbf{Trading \& Domain:} FIX Protocol, ION Platform, OMS/EMS, Pre-Trade Risk, Equities, FICC, Derivatives
-    \item \textbf{Cloud \& DevOps:} AWS (EC2), Linux/Ubuntu, TeamCity, Jenkins, Git, CI/CD, Microservices
+    \item \textbf{Programming:} Python, SQL, Java, C++, JavaScript
+
+    \item \textbf{Frameworks:} FastAPI, Flask, Django, ReactJS
+
+    \item \textbf{Trading Systems:} FIX 4.4, FIX Session
+    Management, Execution Reports, Order Cancel/Replace,
+    ION Platform, OMS/EMS, Pre-Trade Risk
+
+    \item \textbf{Data Engineering:} PostgreSQL, Pandas,
+    NumPy, ETL Pipelines, Matplotlib, Dash
+
+    \item \textbf{Cloud \& DevOps:} AWS EC2, Linux/Ubuntu,
+    Jenkins, TeamCity, Git, CI/CD, Microservices
+
+    \item \textbf{AI-Assisted Development:} AI Coding Agents,
+    LLM Tooling, Prompt Engineering
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	CERTIFICATES SECTION
-%----------------------------------------------------------------------------------------
+\resumesection{Certifications}
 
-\sectionbreak
-\section*{Certificates}
 \begin{itemize}
-    \item CFA Institute Investment Foundations\textregistered{} Certificate
+    \item CFA Institute Investment Foundations Certificate
     \item Bloomberg Market Concepts
-    \item OpenEDG Python Institute: Programming with Python Professional Certificate
+    \item OpenEDG Python Institute -- Programming with Python
+    Professional Certificate
     \item Anaconda Python for Data Science Professional Certificate
-    \item Data Engineering Foundations Professional Certificate by Astronomer
-    \item Ubuntu Linux Professional Certificate by Canonical
-    \item HackerRank Software Engineer Certificate \& Problem Solving (Intermediate)
+    \item Data Engineering Foundations -- Astronomer
+    \item Ubuntu Linux Professional Certificate -- Canonical
+    \item HackerRank Software Engineer Certificate and
+    Problem Solving (Intermediate)
     \item Cisco Certificate in Ethical Hacking
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	LANGUAGES SECTION
-%----------------------------------------------------------------------------------------
+\resumesection{Languages}
 
-\sectionbreak
-\section*{Languages}
 English, Cantonese, Putonghua
 
 \end{document}
