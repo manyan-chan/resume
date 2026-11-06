@@ -1,51 +1,68 @@
-# .github/workflows/compile-resume.yml
+name: Compile All LaTeX Documents
 
-name: Compile Resume PDF
-
-# Trigger the workflow on push events to all branches
 on:
   push:
-    branches: ["*"] # Run on every branch push
-    # Optional: Only run if .tex files were changed
-    # paths:
-    #   - '**.tex'
+    branches: [main]
+    paths:
+      - '**.tex'
+      - '.github/workflows/compile-resume.yml'
+
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.tex'
+      - '.github/workflows/compile-resume.yml'
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build_latex:
-    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+  compile:
+    name: Compile All PDFs
+    runs-on: ubuntu-latest
+
     steps:
-      # Step 1: Check out your repository code
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Compile LaTeX using the xu-cheng/latex-action
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          # --- Required ---
-          # >>> CHANGE THIS if your main LaTeX file is named differently <<<
-          # If your file name matches the branch name dynamically, you may need a different setup.
-          root_file: resume.tex
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra \
+            texlive-fonts-recommended texlive-lang-english
 
-          # --- Optional ---
-          # Specify the compiler (pdflatex is appropriate for your document)
-          compiler: pdflatex
+      - name: Compile all TEX files
+        shell: bash
+        run: |
+          set -euo pipefail
 
-          # Arguments for latexmk: non-stop on errors, better error format, target PDF
-          args: -interaction=nonstopmode -file-line-error -pdf
+          count=0
 
-          # --- Advanced Optional ---
-          # You likely won't need extra packages for this resume template
-          # extra_system_packages: "texlive-fonts-extra"
+          while IFS= read -r -d '' file; do
+            echo "Compiling: $file"
 
-      # Step 3: Upload the generated PDF as an artifact
-      - name: Upload PDF artifact
+            latexmk -pdf \
+              -interaction=nonstopmode \
+              -file-line-error \
+              "$file"
+
+            ((count+=1))
+          done < <(find . -type f -name '*.tex' \
+            -not -path './.git/*' -print0)
+
+          if [ "$count" -eq 0 ]; then
+            echo "No .tex files found."
+            exit 1
+          fi
+
+          echo "Successfully compiled $count LaTeX document(s)."
+
+      - name: Upload compiled PDFs
         uses: actions/upload-artifact@v4
         with:
-          # Name of the artifact bundle in GitHub Actions
-          name: Resume_PDF
-          # Path to the generated PDF file.
-          # >>> CHANGE THIS if your root_file is not resume.tex <<<
-          path: resume.pdf
-          # Optional: How long to keep the artifact (days). Default is 90.
-          # retention-days: 30
+          name: compiled-pdfs
+          path: '**/*.pdf'
+          if-no-files-found: error
+          retention-days: 30
