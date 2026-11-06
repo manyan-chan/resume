@@ -1,62 +1,76 @@
 \documentclass[10pt,a4paper]{article}
-
-\usepackage[a4paper,margin=1.45cm,top=1.35cm,bottom=1.35cm]{geometry}
+\usepackage[a4paper,left=1.7cm,right=1.7cm,top=1.55cm,bottom=1.55cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{xcolor}
-\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tabularx}
-\usepackage{array}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\tabcolsep}{0pt}
-\renewcommand{\baselinestretch}{0.97}
+\linespread{1.015}
+
 \definecolor{accent}{HTML}{17365D}
 \definecolor{muted}{HTML}{555555}
 
 \newcommand{\ressection}[1]{%
-  \vspace{7pt}%
-  {\large\bfseries\color{accent} #1}\par
-  \vspace{2pt}\hrule height 0.5pt
-  \vspace{4pt}%
-}
+  \vspace{12pt}{\large\bfseries\color{accent}#1}\par
+  \vspace{4pt}\hrule height 0.5pt\vspace{7pt}}
+
 \newcommand{\job}[4]{%
-  \textbf{#1}\hfill{\small #2}\\[-1pt]
-  \textit{#3}\hfill{\small\color{muted}#4}\par
-}
+  \vspace{7pt}\textbf{#1}\hfill{\small #2}\\[1pt]
+  \textit{#3}\hfill{\small\color{muted}#4}\par\vspace{2pt}}
+
 \newenvironment{bullets}{%
-  \begin{itemize}[leftmargin=13pt,itemsep=1.5pt,topsep=2pt,parsep=0pt,partopsep=0pt]
-}{\end{itemize}}
-\newcommand{\skill}[2]{\textbf{#1:} #2\par}
+  \begin{list}{\textbullet}{%
+    \setlength{\leftmargin}{14pt}%
+    \setlength{\labelwidth}{8pt}%
+    \setlength{\labelsep}{5pt}%
+    \setlength{\itemsep}{4pt}%
+    \setlength{\topsep}{4pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+  }%
+}{\end{list}\vspace{3pt}}
+
+\newcommand{\skill}[2]{\textbf{#1:} #2\par\vspace{4pt}}
 
 \begin{document}
 
 \begin{center}
-  {\LARGE\bfseries\color{accent} MAN YAN CHAN}\\[3pt]
+  {\LARGE\bfseries\color{accent} MAN YAN CHAN}\\[5pt]
   Hong Kong \;|\; +852 56924792 \;|\;
-  \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com}\\[2pt]
+  \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com}\\[3pt]
   \href{https://github.com/manyan-chan}{GitHub} \;|\;
   \href{https://www.linkedin.com/in/richard-chanmy}{LinkedIn} \;|\;
   \href{https://manyan-chan.github.io}{Portfolio}
 \end{center}
-\vspace{-5pt}
+
+\vspace{1pt}
 
 \ressection{PROFESSIONAL SUMMARY}
+
 Quantitative Developer with experience in financial technology, electronic trading and Python-based strategy development. Combines software engineering experience across equities derivatives, credit trading and treasury analytics with practical backtesting, financial data processing and ongoing MSc Financial Engineering studies.
 
 \ressection{QUANTITATIVE \& TECHNICAL SKILLS}
+
 \skill{Strategy Development}{Python backtesting, technical indicators, Bollinger Bands, moving averages, RSI, historical market-data analysis, strategy evaluation}
+
 \skill{Financial Markets}{Equities derivatives, credit trading, interest-rate derivatives, electronic trading, pricing workflows, order lifecycle, Banking Book NPV/NII}
+
 \skill{Data \& Analytics}{Pandas, NumPy, PostgreSQL, ETL, financial data processing, Matplotlib, Plotly Dash}
+
 \skill{Software Engineering}{Python, C\#, Java, C++, JavaScript, SQL, Bash/Shell, FastAPI, Flask, Django, ReactJS, microservices, FIX 4.4}
+
 \skill{Platforms \& Tools}{ION Platform, OMS/EMS, AWS EC2, Linux/Unix, Windows Server, Git, Jenkins, TeamCity, CI/CD}
 
 \ressection{PROFESSIONAL EXPERIENCE}
+
 \job{Crédit Agricole CIB (CACIB)}{Jan 2026 -- Present}{Production Engineer -- Credit Trading Desk}{Hong Kong}
+
 \begin{bullets}
   \item Contribute C\# application functionality and enhancements to in-house front-office trading software supporting electronic trading of interest-rate derivatives, collaborating with trading and technical teams.
   \item Support credit-trading operations on the ION Platform across Windows Server, on-premises servers and Linux/Unix environments.
@@ -66,13 +80,19 @@ Quantitative Developer with experience in financial technology, electronic tradi
 \end{bullets}
 
 \job{Barclays}{Jun 2024 -- Jun 2025}{Software Engineer -- Equities Derivatives Sales \& Trading}{}
+
 \begin{bullets}
   \item Developed Python event-driven microservices and front-office application components supporting equities derivatives trading workflows.
   \item Implemented FIX 4.4 integration functionality, including session management, message parsing and validation, Execution Reports, and Order Cancel/Replace.
   \item Worked on automated pricing and algorithmic execution components and supported integration with buy-side institutions.
 \end{bullets}
 
+\newpage
+
+\ressection{PROFESSIONAL EXPERIENCE (CONTINUED)}
+
 \job{HSBC}{Jul 2022 -- Feb 2024}{Development Specialist -- Market Treasury IT, Global Banking \& Markets}{}
+
 \begin{bullets}
   \item Built Python ETL and data-processing workflows using Pandas and NumPy for Banking Book NPV and NII analytics.
   \item Queried and validated financial datasets in PostgreSQL and developed dashboards using Plotly Dash and Matplotlib.
@@ -80,6 +100,7 @@ Quantitative Developer with experience in financial technology, electronic tradi
 \end{bullets}
 
 \job{NineBarrack}{Jan 2022 -- May 2022}{Quant Developer (Part-time)}{}
+
 \begin{bullets}
   \item Developed Python backtesting workflows with Pandas and NumPy to evaluate technical-indicator-based trading strategies.
   \item Implemented signals using Bollinger Bands, moving averages and RSI, and analysed historical market data.
@@ -87,15 +108,19 @@ Quantitative Developer with experience in financial technology, electronic tradi
 \end{bullets}
 
 \ressection{EDUCATION}
-\textbf{WorldQuant University} \hfill {\small Apr 2025 -- Expected Apr 2027}\\
-MSc in Financial Engineering\\[3pt]
-\textbf{The University of Hong Kong (HKU)} \hfill {\small Graduated Jun 2022}\\
+
+\textbf{WorldQuant University} \hfill {\small Apr 2025 -- Expected Apr 2027}\\[2pt]
+MSc in Financial Engineering\\[7pt]
+
+\textbf{The University of Hong Kong (HKU)} \hfill {\small Graduated Jun 2022}\\[2pt]
 BBA in Information Systems and Computer Science; Second Class Honours (Upper Division)
 
 \ressection{CERTIFICATIONS}
+
 CFA Institute Investment Foundations; Bloomberg Market Concepts; Python Institute Programming with Python Professional Certificate; Anaconda Python for Data Science Professional Certificate; Data Engineering Foundations (Astronomer); Ubuntu Linux Professional Certificate (Canonical); HackerRank Software Engineer Certificate and Problem Solving (Intermediate); Cisco Certificate in Ethical Hacking.
 
-\ressection{LANGUAGES}
-English, Cantonese, Putonghua
+\vspace{5pt}
+
+\textbf{Languages:} English, Cantonese, Putonghua
 
 \end{document}
