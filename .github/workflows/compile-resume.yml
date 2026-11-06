@@ -1,3 +1,4 @@
+
 name: Compile All LaTeX Documents
 
 on:
@@ -27,11 +28,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Cache downloaded Debian packages between workflow runs.
+      - name: Cache LaTeX packages
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ runner.os }}-latex-packages-v1
+          restore-keys: |
+            ${{ runner.os }}-latex-packages-
+
+      # Install only the LaTeX packages required by the resumes.
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y latexmk texlive-latex-extra \
-            texlive-fonts-recommended texlive-lang-english
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            lmodern
 
       - name: Compile all TEX files
         shell: bash
@@ -45,12 +59,16 @@ jobs:
 
             latexmk -pdf \
               -interaction=nonstopmode \
+              -halt-on-error \
               -file-line-error \
               "$file"
 
-            ((count+=1))
-          done < <(find . -type f -name '*.tex' \
-            -not -path './.git/*' -print0)
+            count=$((count + 1))
+          done < <(
+            find . -type f -name '*.tex' \
+              -not -path './.git/*' \
+              -print0
+          )
 
           if [ "$count" -eq 0 ]; then
             echo "No .tex files found."
