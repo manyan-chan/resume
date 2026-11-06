@@ -1,255 +1,101 @@
 \documentclass[10pt,a4paper]{article}
 
-% ---------- Packages ----------
-\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=1.45cm,top=1.35cm,bottom=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[a4paper,left=0.65in,right=0.65in,top=0.50in,bottom=0.50in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{titlesec}
-\usepackage{microtype}
-\usepackage{needspace}
-\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
 
-% ---------- Formatting ----------
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\baselinestretch}{0.97}
+\definecolor{accent}{HTML}{17365D}
+\definecolor{muted}{HTML}{555555}
 
-\definecolor{sectioncolor}{RGB}{25,55,85}
-
-\titleformat{\section}
-  {\large\bfseries\color{sectioncolor}}
-  {}
-  {0pt}
-  {}
-  [\titlerule]
-
-\titlespacing*{\section}{0pt}{8pt}{5pt}
-
-\setlist[itemize]{
-    leftmargin=1.3em,
-    itemsep=1.5pt,
-    topsep=2pt,
-    parsep=0pt,
-    partopsep=0pt
+\newcommand{\ressection}[1]{%
+  \vspace{7pt}%
+  {\large\bfseries\color{accent} #1}\par
+  \vspace{2pt}\hrule height 0.5pt
+  \vspace{4pt}%
 }
-
-\newcommand{\experience}[4]{
-    \needspace{4\baselineskip}
-    \textbf{#1} \hfill \textit{#3}\\
-    \textit{#2}\\[-4pt]
-    #4
-    \vspace{3pt}
+\newcommand{\job}[4]{%
+  \textbf{#1}\hfill{\small #2}\\[-1pt]
+  \textit{#3}\hfill{\small\color{muted}#4}\par
 }
+\newenvironment{bullets}{%
+  \begin{itemize}[leftmargin=13pt,itemsep=1.5pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}}
+\newcommand{\skill}[2]{\textbf{#1:} #2\par}
 
-% ---------- Document ----------
 \begin{document}
 
-% ---------- Header ----------
 \begin{center}
-    {\LARGE \textbf{MAN YAN CHAN}}\\[4pt]
-    Hong Kong \quad | \quad +852 56924792 \quad | \quad
-    \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com}\\[3pt]
-    \href{https://github.com/manyan-chan}{GitHub}
-    \quad | \quad
-    \href{https://www.linkedin.com/in/richard-chanmy}{LinkedIn}
-    \quad | \quad
-    \href{https://manyan-chan.github.io}{Personal Website}
+  {\LARGE\bfseries\color{accent} MAN YAN CHAN}\\[3pt]
+  Hong Kong \;|\; +852 56924792 \;|\;
+  \href{mailto:richard.mychan@gmail.com}{richard.mychan@gmail.com}\\[2pt]
+  \href{https://github.com/manyan-chan}{GitHub} \;|\;
+  \href{https://www.linkedin.com/in/richard-chanmy}{LinkedIn} \;|\;
+  \href{https://manyan-chan.github.io}{Portfolio}
 \end{center}
+\vspace{-5pt}
 
-\vspace{2pt}
+\ressection{PROFESSIONAL SUMMARY}
+Quantitative Developer with experience in financial technology, electronic trading and Python-based strategy development. Combines software engineering experience across equities derivatives, credit trading and treasury analytics with practical backtesting, financial data processing and ongoing MSc Financial Engineering studies.
 
-% ---------- Professional Summary ----------
-\section*{Professional Summary}
+\ressection{QUANTITATIVE \& TECHNICAL SKILLS}
+\skill{Strategy Development}{Python backtesting, technical indicators, Bollinger Bands, moving averages, RSI, historical market-data analysis, strategy evaluation}
+\skill{Financial Markets}{Equities derivatives, credit trading, interest-rate derivatives, electronic trading, pricing workflows, order lifecycle, Banking Book NPV/NII}
+\skill{Data \& Analytics}{Pandas, NumPy, PostgreSQL, ETL, financial data processing, Matplotlib, Plotly Dash}
+\skill{Software Engineering}{Python, C\#, Java, C++, JavaScript, SQL, Bash/Shell, FastAPI, Flask, Django, ReactJS, microservices, FIX 4.4}
+\skill{Platforms \& Tools}{ION Platform, OMS/EMS, AWS EC2, Linux/Unix, Windows Server, Git, Jenkins, TeamCity, CI/CD}
 
-Quantitative Developer with experience in financial technology,
-electronic trading, and quantitative strategy development.
-Currently pursuing an MSc in Financial Engineering at
-WorldQuant University. Experienced in Python-based quantitative
-backtesting, financial data analysis, trading application
-development, and electronic execution workflows.
-Proficient in Python, Pandas, NumPy, SQL, and financial data
-processing, with exposure to equities derivatives, credit trading,
-and interest rate derivatives. Combines quantitative programming
-capabilities with practical front-office trading systems experience.
+\ressection{PROFESSIONAL EXPERIENCE}
+\job{Crédit Agricole CIB (CACIB)}{Jan 2026 -- Present}{Production Engineer -- Credit Trading Desk}{Hong Kong}
+\begin{bullets}
+  \item Contribute C\# application functionality and enhancements to in-house front-office trading software supporting electronic trading of interest-rate derivatives, collaborating with trading and technical teams.
+  \item Support credit-trading operations on the ION Platform across Windows Server, on-premises servers and Linux/Unix environments.
+  \item Investigate pricing discrepancies, pre-trade risk validation errors, order configuration and trade lifecycle issues; perform root-cause analysis and coordinate incident resolution.
+  \item Assist with BAU workflows, including IMM rolls, trade checks and platform investigations.
+  \item Use SQL/PostgreSQL and shell scripts for troubleshooting and data validation; manage incidents and changes through ServiceNow and Jira.
+\end{bullets}
 
-% ---------- Technical Skills ----------
-\section*{Technical Skills}
+\job{Barclays}{Jun 2024 -- Jun 2025}{Software Engineer -- Equities Derivatives Sales \& Trading}{}
+\begin{bullets}
+  \item Developed Python event-driven microservices and front-office application components supporting equities derivatives trading workflows.
+  \item Implemented FIX 4.4 integration functionality, including session management, message parsing and validation, Execution Reports, and Order Cancel/Replace.
+  \item Worked on automated pricing and algorithmic execution components and supported integration with buy-side institutions.
+\end{bullets}
 
-\textbf{Quantitative Development:}
-Python, Pandas, NumPy, Quantitative Backtesting,
-Technical Indicators, Strategy Analysis, Financial Data Processing
+\job{HSBC}{Jul 2022 -- Feb 2024}{Development Specialist -- Market Treasury IT, Global Banking \& Markets}{}
+\begin{bullets}
+  \item Built Python ETL and data-processing workflows using Pandas and NumPy for Banking Book NPV and NII analytics.
+  \item Queried and validated financial datasets in PostgreSQL and developed dashboards using Plotly Dash and Matplotlib.
+  \item Supported SIT, UAT and regression testing, including test automation and defect investigation.
+\end{bullets}
 
-\textbf{Quantitative Research:}
-Bollinger Bands, Moving Averages, Relative Strength Index (RSI),
-Historical Data Analysis, Trading Strategy Evaluation
+\job{NineBarrack}{Jan 2022 -- May 2022}{Quant Developer (Part-time)}{}
+\begin{bullets}
+  \item Developed Python backtesting workflows with Pandas and NumPy to evaluate technical-indicator-based trading strategies.
+  \item Implemented signals using Bollinger Bands, moving averages and RSI, and analysed historical market data.
+  \item Built strategy dashboards with Flask, ReactJS and Socket.IO; used AWS EC2 and CI/CD workflows for deployment.
+\end{bullets}
 
-\textbf{Financial Markets:}
-Equities Derivatives, Credit Trading, Interest Rate Derivatives,
-Electronic Trading, Pricing, Order Lifecycle, Banking Book NPV/NII
+\ressection{EDUCATION}
+\textbf{WorldQuant University} \hfill {\small Apr 2025 -- Expected Apr 2027}\\
+MSc in Financial Engineering\\[3pt]
+\textbf{The University of Hong Kong (HKU)} \hfill {\small Graduated Jun 2022}\\
+BBA in Information Systems and Computer Science; Second Class Honours (Upper Division)
 
-\textbf{Programming and Software Engineering:}
-Python, C\#, SQL, Java, C++, JavaScript, Bash/Shell,
-Event-driven Architecture, Microservices, REST APIs
+\ressection{CERTIFICATIONS}
+CFA Institute Investment Foundations; Bloomberg Market Concepts; Python Institute Programming with Python Professional Certificate; Anaconda Python for Data Science Professional Certificate; Data Engineering Foundations (Astronomer); Ubuntu Linux Professional Certificate (Canonical); HackerRank Software Engineer Certificate and Problem Solving (Intermediate); Cisco Certificate in Ethical Hacking.
 
-\textbf{Data and Analytics:}
-PostgreSQL, Pandas, NumPy, ETL, Plotly Dash, Matplotlib
-
-\textbf{Trading Technology:}
-FIX 4.4, FIX Session Management, Execution Reports,
-Order Cancel/Replace, ION Platform, OMS/EMS
-
-\textbf{Infrastructure and Tools:}
-Linux/Unix, Windows Server, AWS EC2, Git, Jenkins,
-TeamCity, CI/CD, ServiceNow, Jira
-
-% ---------- Experience ----------
-\section*{Professional Experience}
-
-\experience
-{Crédit Agricole CIB}
-{Production Engineer -- Credit Trading Desk}
-{Jan 2026 -- Present}
-{
-    \begin{itemize}
-        \item Contribute to the development and enhancement of
-        in-house C\# front-office trading applications supporting
-        electronic trading of interest rate derivatives.
-
-        \item Work with trading and technical teams on front-office
-        application functionality and the operational workflows
-        supporting electronic trading.
-
-        \item Investigate pricing discrepancies, pre-trade risk
-        validation errors, and trade lifecycle anomalies through
-        application diagnostics and SQL/PostgreSQL data analysis.
-
-        \item Perform production incident investigation and root
-        cause analysis for trading applications running on the
-        ION platform across Windows Server and Linux/Unix
-        on-premises environments.
-
-        \item Support credit trading operations, including pricing
-        checks, order configuration, trade investigations,
-        and IMM roll activities.
-
-        \item Develop SQL scripts for production troubleshooting,
-        data validation, and investigation of trading-related issues.
-    \end{itemize}
-}
-
-\experience
-{Barclays}
-{Software Engineer -- Equities Derivatives Sales \& Trading}
-{Jun 2024 -- Jun 2025}
-{
-    \begin{itemize}
-        \item Developed Python-based event-driven microservices
-        supporting front-office equities derivatives trading
-        applications.
-
-        \item Implemented and supported FIX 4.4 integrations,
-        including FIX session management, message parsing,
-        and message validation.
-
-        \item Worked with FIX Execution Reports and Order
-        Cancel/Replace workflows supporting electronic order
-        lifecycle management.
-
-        \item Contributed to automated pricing and algorithmic
-        execution components for equities derivatives trading.
-
-        \item Collaborated with front-office stakeholders and
-        buy-side institutions on trading system integration
-        and technical requirements.
-    \end{itemize}
-}
-
-\experience
-{HSBC}
-{Development Specialist -- Market Treasury IT, Global Banking \& Markets}
-{Jul 2022 -- Feb 2024}
-{
-    \begin{itemize}
-        \item Developed Python ETL processes using Pandas and
-        NumPy to process financial data for banking book
-        analytics and reporting.
-
-        \item Supported Banking Book Net Present Value (NPV)
-        and Net Interest Income (NII) analytics.
-
-        \item Used PostgreSQL for financial data storage,
-        querying, transformation, and analysis.
-
-        \item Developed interactive analytical dashboards
-        and data visualisations using Plotly Dash and Matplotlib.
-
-        \item Supported system integration testing, user
-        acceptance testing, and automated regression testing.
-    \end{itemize}
-}
-
-\experience
-{NineBarrack}
-{Quantitative Developer (Part-time)}
-{Jan 2022 -- May 2022}
-{
-    \begin{itemize}
-        \item Developed Python-based quantitative trading
-        strategies and backtesting tools using Pandas and NumPy.
-
-        \item Implemented technical trading indicators,
-        including Bollinger Bands, moving averages,
-        and Relative Strength Index (RSI).
-
-        \item Analysed historical market data and evaluated
-        strategy behaviour through quantitative backtesting.
-
-        \item Built interactive trading dashboards using
-        Flask, ReactJS, and Socket.IO to present strategy
-        and market data.
-
-        \item Deployed applications on AWS EC2 and supported
-        CI/CD workflows.
-    \end{itemize}
-}
-
-% ---------- Education ----------
-\section*{Education}
-
-\textbf{WorldQuant University}
-\hfill \textit{Apr 2025 -- Apr 2027 (Expected)}\\
-MSc in Financial Engineering
-
-\vspace{4pt}
-
-\textbf{The University of Hong Kong}
-\hfill \textit{Graduated Jun 2022}\\
-Bachelor of Business Administration in Information Systems
-and Computer Science\\
-Second Class Honours, Upper Division
-
-% ---------- Certifications ----------
-\section*{Certifications}
-
-\begin{itemize}
-    \item CFA Institute Investment Foundations
-    \item Bloomberg Market Concepts
-    \item OpenEDG Python Institute -- Programming with Python
-    Professional Certificate
-    \item Anaconda -- Python for Data Science Professional Certificate
-    \item Data Engineering Foundations -- Astronomer
-    \item Ubuntu Linux Professional Certificate -- Canonical
-    \item HackerRank -- Software Engineer Certificate
-    \item HackerRank -- Problem Solving (Intermediate)
-    \item Cisco Certificate in Ethical Hacking
-\end{itemize}
-
-% ---------- Languages ----------
-\section*{Languages}
-
+\ressection{LANGUAGES}
 English, Cantonese, Putonghua
 
 \end{document}
